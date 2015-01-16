@@ -1,0 +1,11 @@
+%h1 Blogs
+%hr
+
+.row
+	- @blogs.each do |blog| 
+		.col-sm-4
+			.panel.panel-primary
+				.panel-heading
+					%h3.panel-title= link_to blog.title, blog_path(blog)
+				.panel-body
+					= truncate_content(blog.excerpt)
