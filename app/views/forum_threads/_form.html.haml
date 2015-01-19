@@ -1,0 +1,10 @@
+= form_for @forum_thread do |f| 
+	.form-group
+		= f.text_field :subject, placeholder: "Subject", class: "form-control"
+
+	= f.fields_for :forum_posts do |p|
+		.form-group
+			= p.text_area :body, placeholder: "Add a comment", rows: 10, class: "form-control"
+
+	.form-group
+		= f.submit class: "btn btn-primary"

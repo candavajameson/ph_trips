@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
    has_many :blogs
+   has_many :forum_threads
+   has_many :forum_posts
 
    mount_uploader :avatar, AvatarUploader
 end

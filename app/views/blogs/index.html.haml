@@ -1,6 +1,10 @@
 %h1 Blogs
 %hr
 
+.container
+	.pull-right
+		= link_to "New Blog", new_blog_path, class: "btn btn-success"
+
 .row
 	- @blogs.each do |blog| 
 		.col-sm-4

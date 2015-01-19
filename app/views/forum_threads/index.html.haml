@@ -1,0 +1,6 @@
+.container
+	.pull-right
+		= link_to "New Thread", new_forum_thread_path, class: "btn btn-success"
+
+	%h1.page-header= "Forum Threads"
+	= render @forum_threads

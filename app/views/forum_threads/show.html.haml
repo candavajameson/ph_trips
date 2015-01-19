@@ -1,0 +1,7 @@
+.container
+	%h1= @forum_thread.subject
+	%p.text-muted= "Created by #{@forum_thread.user.email}"
+	= render @forum_thread.forum_posts
+
+	%hr
+	= render partial: "forum_posts/form"
