@@ -1,6 +1,8 @@
 class DashboardController < ApplicationController	
+	
 	def index
-		# Get Hotel
-		# Get Blog
+		@hotels = Hotel.order('created_at DESC').limit(5)
+		@blogs = Blog.order('created_at DESC').limit(10)
 	end
+
 end
