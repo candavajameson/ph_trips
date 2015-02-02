@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119222411) do
+ActiveRecord::Schema.define(version: 20150130205935) do
 
   create_table "blogs", force: true do |t|
     t.string  "title"
@@ -25,6 +25,11 @@ ActiveRecord::Schema.define(version: 20150119222411) do
 
   create_table "categories", force: true do |t|
     t.string "name"
+  end
+
+  create_table "destinations", force: true do |t|
+    t.string "name"
+    t.text   "description"
   end
 
   create_table "forum_posts", force: true do |t|
@@ -41,6 +46,15 @@ ActiveRecord::Schema.define(version: 20150119222411) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "hotels", force: true do |t|
+    t.string  "name"
+    t.text    "description"
+    t.integer "destination_id"
+    t.text    "address"
+  end
+
+  add_index "hotels", ["destination_id"], name: "index_hotels_on_destination_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

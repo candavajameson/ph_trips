@@ -39,7 +39,7 @@ class Admin::DestinationsController < Admin::ApplicationController
 
 	private
 	def destination_params
-		params.require(:destination).permit(:name)
+		params.require(:destination).permit(:name, :description)
 	end
 
 	def set_destination

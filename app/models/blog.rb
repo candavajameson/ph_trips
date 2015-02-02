@@ -7,4 +7,5 @@ class Blog < ActiveRecord::Base
 	mount_uploader :banner, BannerUploader
 
 	belongs_to :user
+	belongs_to :category
 end

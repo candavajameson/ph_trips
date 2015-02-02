@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
    has_many :blogs
    has_many :forum_threads
    has_many :forum_posts
+   has_many :hotels
 
    mount_uploader :avatar, AvatarUploader
 end

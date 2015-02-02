@@ -1,0 +1,19 @@
+%h1 Destination 
+%hr
+
+.container
+	.pull-right
+		= link_to "Create Destination", new_admin_destination_path, class: 'btn btn-success'
+
+%table.table.table-striped
+	%thead
+		%th Name
+		%th
+	%tbody
+		- @destinations.each do |destination|
+			%tr
+				%td= destination.name
+				%td= link_to "Edit", edit_admin_destination_path(destination), class: 'btn'
+%hr
+= paginate @detinations
+= page_entries_info @destinations
