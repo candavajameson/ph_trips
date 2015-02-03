@@ -4,3 +4,7 @@
 
 	%h1.page-header= "Forum Threads"
 	= render @forum_threads
+
+	%hr
+	= paginate @forum_threads
+	= page_entries_info @forum_threads

@@ -16,7 +16,7 @@ class Admin::HotelsController < Admin::ApplicationController
 			flash[:success] = 'Successfully created hotel'
 			redirect_to @hotel
 		else
-			flash[:error] = 'Unable to save hotel'
+			#flash[:error] = 'Unable to save hotel'
 			render 'new'
 		end
 	end

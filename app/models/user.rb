@@ -10,4 +10,9 @@ class User < ActiveRecord::Base
    has_many :hotels
 
    mount_uploader :avatar, AvatarUploader
+
+   def is_admin?
+   		admin
+   end
+   
 end

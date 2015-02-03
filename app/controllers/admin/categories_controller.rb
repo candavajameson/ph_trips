@@ -16,7 +16,7 @@ class Admin::CategoriesController < Admin::ApplicationController
 			flash[:success] = 'Successfully created category'
 			@category
 		else
-			flash[:error] = 'Category is not saved'
+			#flash[:error] = 'Category is not saved'
 			render 'new'
 		end
 	end

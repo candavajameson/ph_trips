@@ -16,7 +16,7 @@ class Admin::DestinationsController < Admin::ApplicationController
 	 		flash[:success] = "Successfully created!"
 	 		redirect_to @destination
 	 	else
-	 		flash[:error] = "Unable to save";
+	 		#flash[:error] = "Unable to save";
 	 		render 'new'
 	 	end
 	end

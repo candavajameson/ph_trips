@@ -43,6 +43,10 @@ gem 'nprogress-rails'
 gem 'masonry-rails'
 gem 'ckeditor'
 
+group :development do 
+	gem 'better_errors'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

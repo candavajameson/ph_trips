@@ -1,4 +1,5 @@
-= form @hotel , html: { class: 'form-horizontal' } do |f|
+= form [:admin, @hotel] , html: { class: 'form-horizontal' } do |f|
+	= render 'shared/error_messages', :object => f.object
 	.row
 		.col-md-12
 			.form-group

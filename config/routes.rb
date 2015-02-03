@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :categories
     resources :destinations
+    resources :hotels
   end
 
   resources :blogs
@@ -18,6 +19,8 @@ Rails.application.routes.draw do
         end
     end
   end
+
+  resource :hotel, only: [:show]
 
   resources :forum_threads do 
     resources :forum_posts, module: :forum_threads

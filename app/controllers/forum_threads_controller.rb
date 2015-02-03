@@ -1,9 +1,10 @@
 class ForumThreadsController < ApplicationController
 	
+	before_action :authenticate_user! 
 	before_action :set_forum_thread, except: [:index, :new, :create]
 
 	def index
-		@forum_threads = ForumThread.all
+		@forum_threads = ForumThread.page(params[:page]).per(10)
 	end
 
 	def show
@@ -16,7 +17,7 @@ class ForumThreadsController < ApplicationController
 	end
 
 	def create
-		@forum_thread = current_user.forum_threads.new forum_thread_params
+		@forum_thread = current_user.forum_threads.new(forum_thread_params)
 		@forum_thread.forum_posts.first.user_id = current_user.id
 
 		if @forum_thread.save
