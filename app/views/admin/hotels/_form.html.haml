@@ -14,5 +14,10 @@
 				= f.label :destination, class: 'control-label'
 				.col-sm-8
 					= f.collection_select(:destination_id, Destination.all, :id, :name, {}, { class: 'form-control' })
+			.form-group
+				= f.label :banner, class: 'control-label'
+				.col-sm-8
+					= image_tag @hotel.banner_url if @hotel.banner?	
+					= f.file_field :banner, class: 'form-control'
 	.form-actions
 		= f.submit 'Save', class: 'btn btn-large btn-success'

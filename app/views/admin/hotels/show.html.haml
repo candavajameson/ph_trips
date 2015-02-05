@@ -1,2 +1,5 @@
 %h1= @hotel.name
 %hr
+
+= image_tag (@hotel.banner_url) if @hotel.banner?
+%p= @hotel.address
