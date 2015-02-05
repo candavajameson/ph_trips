@@ -1,0 +1,21 @@
+%h1 Hotels
+%hr
+
+.container
+	.pull-right
+		= link_to 'New', new_admin_hotel_path, class: 'btn btn-success'
+
+%table.table.table-striped
+	%thead
+		%th Name
+		%th Destination
+		%th
+	%tbody
+		- @hotels.each do |hotel|
+			%tr
+				%td= hotel.name
+				%td= hotel.destination.name
+				%td= link_to 'Edit', edit_admin_hotel_path(hotel), class: 'btn btn-success'
+
+= paginate @hotels
+= page_entries_info @hotels

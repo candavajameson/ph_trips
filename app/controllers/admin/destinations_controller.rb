@@ -14,7 +14,7 @@ class Admin::DestinationsController < Admin::ApplicationController
 		@destination = Destination.new(destination_params)
 		if @destination.save()
 	 		flash[:success] = "Successfully created!"
-	 		redirect_to @destination
+	 		redirect_to admin_destination_path @destination
 	 	else
 	 		#flash[:error] = "Unable to save";
 	 		render 'new'
@@ -30,7 +30,7 @@ class Admin::DestinationsController < Admin::ApplicationController
 	def update
 		if @destination.update_attributes(destination_params) 
 			flash[:success] = "Successfully updated!"
-			redirect_to @destination
+			redirect_to admin_destination_path @destination
 		else
 			flash[:error] = "Unable to update destination"
 			render 'edit'

@@ -1,6 +1,6 @@
 class Admin::CategoriesController < Admin::ApplicationController
 
-	before_filter :only [:edit, :update]
+	before_filter :set_category, only: [:edit, :update]
 
 	def index
 		@categories = Category.page(params[:page]).per(10)
