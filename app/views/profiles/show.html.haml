@@ -1,4 +1,14 @@
 %h1 Profile
 %hr
 
-= @user.email
+= form_for @user, url: profile_path, method: :put, html: { class: 'form-horizontal' } do  |f|
+	= render 'shared/error_messages', :object => f.object
+	.row
+		.col-md-12
+			.form-group
+				= f.label :email, class: 'control-label'
+				.col-sm-8
+					= f.text_field :email, class: 'form-control'
+
+	.form-action
+		= f.submit 'Update', class: 'btn btn-success'

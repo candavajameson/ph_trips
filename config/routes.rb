@@ -3,24 +3,24 @@ Rails.application.routes.draw do
 
   root 'dashboard#index'
 
+  resources :blogs
+  resource :profile, only: [:show, :update] do
+    scope module: :profiles do
+      resource :password, only: [:edit, :update] do
+          member do
+            put :reset
+          end
+      end
+    end
+  end
+
+  resources :hotel, only: [:show]
+
   namespace :admin do
     resources :categories
     resources :destinations
     resources :hotels
   end
-
-  resources :blogs
-  resource :profile, only: [:show]
-
-  scope module: :profiles do
-    resource :password, only: [:edit, :update] do
-        member do
-          put :reset
-        end
-    end
-  end
-
-  resources :hotel, only: [:show]
 
   resources :forum_threads do 
     resources :forum_posts, module: :forum_threads

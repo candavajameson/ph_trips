@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
 	def show
 	end
 
+
 	def update
 		if @user.update_attributes(user_params)
 			flash[:success] = 'Profile was successfully updated'
