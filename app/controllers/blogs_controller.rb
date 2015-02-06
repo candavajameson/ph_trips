@@ -16,7 +16,7 @@ class BlogsController < ApplicationController
 		@blog.user_id = current_user
 
 		if @blog.save
-			flash[:success] = 'Successfully save the blog'
+			flash[:notice] = 'Successfully save the blog'
 			redirect_to @blog
 		else
 			render 'new'
@@ -28,7 +28,7 @@ class BlogsController < ApplicationController
 
 	def update
 		if @blog.update_attributes(blog_params)
-			flash[:success] = 'Successfully updated blog'
+			flash[:notice] = 'Successfully updated blog'
 			redirect_to @blog
 		else
 			render 'edit'

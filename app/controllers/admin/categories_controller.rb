@@ -13,10 +13,10 @@ class Admin::CategoriesController < Admin::ApplicationController
 	def create
 		@category = Category.new(category_param)
 		if @category.save
-			flash[:success] = 'Successfully created category'
-			@category
+			flash[:notice] =  'Successfully created category'
+			redirect_to [:admin, @category]
 		else
-			#flash[:error] = 'Category is not saved'
+			flash[:alert] =  'Failed to create category'
 			render 'new'
 		end
 	end
@@ -26,9 +26,10 @@ class Admin::CategoriesController < Admin::ApplicationController
 
 	def update
 		if @category.update_attributes(category_param)
-			flash[:success] = 'Successfully updated category'
-			redirect_to @category
+			flash[:notice] = 'Successfully updated category'
+			redirect_to [:admin, @category]
 		else
+			flash[:alert] = 'Failed to update category'
 			render 'edit'
 		end
 	end

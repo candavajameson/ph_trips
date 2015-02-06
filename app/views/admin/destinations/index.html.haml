@@ -13,7 +13,7 @@
 		- @destinations.each do |destination|
 			%tr
 				%td= destination.name
-				%td= link_to "Edit", edit_admin_destination_path(destination), class: 'btn'
+				%td= link_to "Edit", edit_admin_destination_path(destination), class: 'btn btn-success'
 %hr
 = paginate @destinations
 = page_entries_info @destinations

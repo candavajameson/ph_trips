@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
 
 	def update
 		if @user.update_attributes(user_params)
-			flash[:success] = 'Profile was successfully updated'
+			flash[:notice] = 'Profile was successfully updated'
 		else
 			render 'show'
 		end

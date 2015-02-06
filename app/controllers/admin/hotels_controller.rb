@@ -13,9 +13,10 @@ class Admin::HotelsController < Admin::ApplicationController
 	def create
 		@hotel = Hotel.new hotel_params
 		if @hotel.save
-			flash[:success] = 'Successfully created hotel'
+			flash[:notice] = 'Successfully created hotel'
 			redirect_to admin_hotel_path @hotel
 		else
+			flash[:alert] = 'Failed to create hotel'
 			render 'new'
 		end
 	end
@@ -25,10 +26,10 @@ class Admin::HotelsController < Admin::ApplicationController
 
 	def update
 		if @hotel.update_attributes(hotel_params)
-			flash[:success] = 'Successfully updated hotel'
+			flash[:notice] = 'Successfully updated hotel'
 			redirect_to admin_hotel_path @hotel
 		else
-			flash[:error] = 'Unable to update hotel'
+			flash[:alert] = 'Failed to update hotel'
 			render 'edit'
 		end
 	end
