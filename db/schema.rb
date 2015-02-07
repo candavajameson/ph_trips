@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150205231731) do
+ActiveRecord::Schema.define(version: 20150207024224) do
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(version: 20150205231731) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "banner"
+    t.decimal  "latitude",       precision: 15, scale: 12
+    t.decimal  "longitude",      precision: 15, scale: 12
   end
 
   add_index "hotels", ["destination_id"], name: "index_hotels_on_destination_id", using: :btree

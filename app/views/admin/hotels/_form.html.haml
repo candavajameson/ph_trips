@@ -15,6 +15,14 @@
 				.col-sm-8
 					= f.collection_select(:destination_id, Destination.all, :id, :name, {}, { class: 'form-control' })
 			.form-group
+				= f.label :latitude, class: 'control-label'
+				.col-sm-8
+					= f.text_field :latitude, class: 'form-control'
+			.form-group
+				= f.label :longitude, class: 'control-label'
+				.col-sm-8
+					= f.text_field :longitude, class: 'form-control'
+			.form-group
 				= f.label :banner, class: 'control-label'
 				.col-sm-8
 					= image_tag @hotel.banner_url if @hotel.banner?	

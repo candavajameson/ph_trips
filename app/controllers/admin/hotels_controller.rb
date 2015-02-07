@@ -39,7 +39,9 @@ class Admin::HotelsController < Admin::ApplicationController
 
 	private 
 	def hotel_params
-		params.require(:hotel).permit(:name, :description, :destination_id, :address, :banner)
+		params.require(:hotel).permit(:name, :description, :destination_id,
+									 	:address, :banner, :latitude,
+									 	:longitude)
 	end
 
 	def set_hotel
