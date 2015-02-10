@@ -1,5 +1,11 @@
 %h1= @hotel.name
 %hr
 
+- content_for :scripts
+	= render 'shared/gmaps'
+
 = image_tag (@hotel.banner_url) if @hotel.banner?
 %p= @hotel.address
+
+.map_container
+	#map.gmaps4rails_map	

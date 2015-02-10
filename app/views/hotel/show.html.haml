@@ -1,4 +1,10 @@
 %h1= @hotel.name
 %hr
 
+- content_for :scripts do
+	= render 'shared/gmaps'
+
 %p= @hotel.address
+
+.map_container
+	#map.gmaps4rails_map	

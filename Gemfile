@@ -42,6 +42,10 @@ gem "font-awesome-rails", '~> 4.2'
 gem 'nprogress-rails'
 gem 'masonry-rails'
 gem 'ckeditor'
+gem 'underscore-rails'
+
+#Google Maps
+gem 'gmaps4rails'
 
 group :development do 
 	gem 'better_errors'
