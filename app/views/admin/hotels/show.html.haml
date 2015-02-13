@@ -1,7 +1,7 @@
 %h1= @hotel.name
 %hr
 
-- content_for :scripts
+- content_for :scripts do
 	= render 'shared/gmaps'
 
 = image_tag (@hotel.banner_url) if @hotel.banner?
