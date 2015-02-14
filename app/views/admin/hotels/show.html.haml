@@ -4,8 +4,10 @@
 - content_for :scripts do
 	= render 'shared/gmaps'
 
-= image_tag (@hotel.banner_url) if @hotel.banner?
-%p= @hotel.address
+.banner-container
+	%p= @hotel.address
+	= image_tag (@hotel.banner_url), class: 'banner' if @hotel.banner?
 
 .map_container
 	#map.gmaps4rails_map	
+
