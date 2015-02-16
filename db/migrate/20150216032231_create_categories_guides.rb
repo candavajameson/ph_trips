@@ -1,4 +1,4 @@
-class CreateGuideCategories < ActiveRecord::Migration
+class CreateCategoriesGuides < ActiveRecord::Migration
   def change
     create_table :categories_guides, :id => false do |t|
     	t.references :guide

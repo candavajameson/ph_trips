@@ -1,6 +1,10 @@
 %h1 Philippines Trips
 %hr
 
+%h3 Guides
+- @guides.each do |guide|
+	%h4= link_to guide.title, guide_path(guide)
+
 %h3 Latest Blogs
 - @blogs.each do |blog|
 	%h4= link_to blog.title, blog_path(blog)
@@ -8,3 +12,4 @@
 %h3 Hotels
 - @hotels.each do |hotel|
 	%h4= link_to hotel.name, hotel_path(hotel)
+
