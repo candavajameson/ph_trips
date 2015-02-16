@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :destinations
     resources :hotels
+    resources :guides
   end
 
   resources :forum_threads do 

@@ -1,0 +1,19 @@
+%h1 Guides
+%hr
+
+.container
+	.pull-right
+		= link_to 'New', new_admin_guide_path, class: 'btn btn-success'
+
+%table.table.table-striped
+	%thead
+		%th Title
+		%th
+	%tbody
+		- @guides.each do |guide|
+			%tr
+				%td= guide.title
+				%td= link_to "Edit", edit_admin_guide_path(guide), class: 'btn btn-success'
+
+= paginate @guides
+= page_entries_info @guides

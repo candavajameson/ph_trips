@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150207024224) do
+ActiveRecord::Schema.define(version: 20150216032231) do
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -48,6 +48,23 @@ ActiveRecord::Schema.define(version: 20150207024224) do
 
   create_table "forum_threads", force: true do |t|
     t.string   "subject"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "guide_categories", id: false, force: true do |t|
+    t.integer "guide_id"
+    t.integer "category_id"
+  end
+
+  add_index "guide_categories", ["category_id"], name: "index_guide_categories_on_category_id", using: :btree
+  add_index "guide_categories", ["guide_id", "category_id"], name: "index_guide_categories_on_guide_id_and_category_id", using: :btree
+
+  create_table "guides", force: true do |t|
+    t.string   "title"
+    t.string   "banner"
+    t.text     "description"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

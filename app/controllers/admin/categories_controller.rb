@@ -14,7 +14,7 @@ class Admin::CategoriesController < Admin::ApplicationController
 		@category = Category.new(category_param)
 		if @category.save
 			flash[:notice] =  'Successfully created category'
-			redirect_to [:admin, @category]
+			redirect_to admin_category_path
 		else
 			flash[:alert] =  'Failed to create category'
 			render 'new'
@@ -27,7 +27,7 @@ class Admin::CategoriesController < Admin::ApplicationController
 	def update
 		if @category.update_attributes(category_param)
 			flash[:notice] = 'Successfully updated category'
-			redirect_to [:admin, @category]
+			redirect_to admin_category_path
 		else
 			flash[:alert] = 'Failed to update category'
 			render 'edit'

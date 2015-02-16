@@ -1,0 +1,7 @@
+%h1= @guide.title
+%hr
+
+%p= @guide.description
+
+- @guide.categories.each do |category|
+	%p= category.name

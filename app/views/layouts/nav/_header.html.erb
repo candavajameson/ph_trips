@@ -10,6 +10,7 @@
 				<li><%= link_to 'Profile', profile_path %></li>
 				<% if current_user.is_admin? %>
 					<li><%= link_to 'Categories', admin_categories_path %></li>
+					<li><%= link_to 'Guides', admin_guides_path %></li>
 					<li><%= link_to 'Destinations', admin_destinations_path %></li>
 					<li><%= link_to 'Hotels', admin_hotels_path %></li>
 				<% end %>
