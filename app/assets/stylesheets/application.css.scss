@@ -16,6 +16,10 @@
 @import 'bootstrap';
 @import 'bootstrap/theme';
 
+.navbar {
+	background-color: #eeeeee !important;
+	background: none;
+}
 
 #login, #registration {
 	max-width: 450px;
@@ -23,15 +27,23 @@
 	margin-right: auto;
 	padding-top: 30px;
 	font-family: proxima-nova,Helvetica,Arial,sans-serif;
+	
+	#user_email,
+	#user_password,
+	#user_password_confirmation {
+		border-radius: 0;
+	}
+
 	h2 {
 		font-size: 23px;
 		line-height: 29px;
 		padding: 0;
 		margin: 0 5px 5px 0;
 	}
+
 	input[type=submit] {
 		width: 100%;
-		font-size: 25px;
+		font-size: 14px;
 		color: #fff;
 		text-transform: uppercase;
 		background: #398439;
