@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :hotel, only: [:show]
+  resources :hotel, only: [:show, :index]
 
   namespace :admin do
     resources :categories

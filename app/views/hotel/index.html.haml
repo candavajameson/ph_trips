@@ -1,0 +1,14 @@
+%h1 Hotels
+%hr
+
+%table.table.table-striped
+	%thead
+		%th Hotel Name
+		%th
+	%tbody
+		- @hotels.each do |hotel|
+			%tr
+				%td= hotel.name
+
+= paginate @hotels
+= page_entries_info @hotels

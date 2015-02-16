@@ -1,5 +1,11 @@
 class HotelController < ApplicationController
 
+	def index
+		@hotels = Hotel.all
+		@hotels = @hotels.where(destination_id: params[:destination]) if params[:destination].present?
+		@hotels = @hotels.page(params[:page]).per(10)
+	end
+
 	def show
 		@hotel = Hotel.find(params[:id])
 		@hash = Gmaps4rails.build_markers(@hotel) do |hotel, marker|
@@ -9,5 +15,6 @@ class HotelController < ApplicationController
 			marker.json({ :id => hotel.id })
 		end
 	end
+
 	
 end
