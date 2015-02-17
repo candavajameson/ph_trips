@@ -39,8 +39,10 @@ class Admin::GuidesController < Admin::ApplicationController
 
 	private
 	def guide_params
-		params.require(:guide).permit(:title, :description, :banner,
-						 category_ids: [] )
+		params.require(:guide).permit(:title, 
+									  :description, 
+									  :banner,
+									  category_ids: [] )
 	end
 
 	def set_guide
