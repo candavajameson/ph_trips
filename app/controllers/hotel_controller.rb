@@ -1,9 +1,16 @@
 class HotelController < ApplicationController
 
 	def index
+		
 		@hotels = Hotel.all
-		@hotels = @hotels.where(destination_id: params[:destination]) if params[:destination].present?
+
+		if params[:destination].present?
+			destination = Destination.where(name: params[:destination])
+			@hotels = @hotels.where(destination_id: destination.first.id)
+		end
+
 		@hotels = @hotels.page(params[:page]).per(10)
+		
 	end
 
 	def show
