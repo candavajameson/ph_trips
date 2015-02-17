@@ -26,11 +26,14 @@
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 30px;
+	padding-left: 40px;
+	padding-right: 40px;
 	font-family: proxima-nova,Helvetica,Arial,sans-serif;
 	
-	#user_email,
-	#user_password,
-	#user_password_confirmation {
+	input[type=text],
+	input[type=email],
+	input[type=password],
+	input[type=submit] {
 		border-radius: 0;
 	}
 
@@ -49,7 +52,7 @@
 		background: #398439;
 		border-color: #398439 !important;
 		border: 2px solid;
-		border-radius: 0;
+		font-weight: 600;
 		-webkit-transition: all 0.6s;
     				transition: all 0.6s;
     	&:hover {
@@ -69,5 +72,20 @@
 		#user_remember_me {
 			float: left;
 		}
+	}
+
+	.btn-submit {
+		margin-bottom: 10px;
+	}
+
+	.btn-login,
+	.btn-signup,
+	.btn-password {
+		margin-bottom: 5px;
+		line-height: 1.2em;
+		float: left;
+		display: block;
+		width: 100%;
+		text-decoration: none !important;
 	}
 }
