@@ -27,6 +27,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 #Auth
 gem 'devise'
 
+#Authorization
+gem 'cancancan', '~> 1.10'
+gem 'rolify'
+
 # Pagination
 gem "kaminari", "~> 0.15.1"
 
