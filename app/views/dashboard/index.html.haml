@@ -1,15 +1,27 @@
-%h1 Philippines Trips
+%h1.main-title Philippines Trips
 %hr
 
-%h3 Guides
-- @guides.each do |guide|
-	%h4= link_to guide.title, '#'
+%h3= link_to 'Guides', guides_path
+#masonry-container.transitions-enabled.infinite-scroll.clearfix
+	- @guides.each do |guide|
+		.box.col3
+			= image_tag (guide.banner_url), class: 'banner'
+			%h1= link_to guide.title,'#'
+			%p= guide.description
 
-%h3 Latest Blogs
-- @blogs.each do |blog|
-	%h4= link_to blog.title, blog_path(blog)
+%h3= link_to 'Latest Blogs', blogs_path
+#masonry-container.transitions-enabled.infinite-scroll.clearfix
+	- @blogs.each do |blog|
+		.box.col3
+			= image_tag (blog.banner_url)
+			%h4= link_to blog.title, blog_path(blog)
+			%p= blog.excerpt
 
-%h3 Hotels
-- @hotels.each do |hotel|
-	%h4= link_to hotel.name, hotel_path(hotel)
+%h3= link_to 'Hotels', hotel_index_path
+#masonry-container.transitions-enabled.infinite-scroll.clearfix
+	- @hotels.each do |hotel|
+		.box.col3
+			= image_tag (hotel.banner_url)
+			%h4= link_to hotel.name, hotel_path(hotel)
+			%p= hotel.description
 

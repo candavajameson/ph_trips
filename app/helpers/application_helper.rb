@@ -5,7 +5,7 @@ module ApplicationHelper
 	end
 
 	def random_css_mansory
-		css = %w(col1 col2 col3)
+		css = %w(col3 col4 col5)
 		css[rand(ss.size)]
 	end
 

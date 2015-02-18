@@ -1,14 +1,12 @@
-%h1 Hotels
+%h1.main-title Hotels
 %hr
 
-%table.table.table-striped
-	%thead
-		%th Hotel Name
-		%th
-	%tbody
-		- @hotels.each do |hotel|
-			%tr
-				%td= hotel.name
+#masonry-container.transitions-enabled.infinite-scroll.clearfix
+	- @hotels.each do |hotel|
+		.box.col4
+			= image_tag (hotel.banner_url)
+			%h1= link_to hotel.name, hotel_path(hotel)
+			%p= hotel.address
 
 = paginate @hotels
 = page_entries_info @hotels

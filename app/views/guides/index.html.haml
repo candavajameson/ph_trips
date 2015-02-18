@@ -1,5 +1,8 @@
-%h1 List Guides
+%h1.main-title Guides
 %hr
 
-- @guides.each do |guide|
-	%h4= guide.title
+#masonry-container.transitions-enabled.infinite-scroll.clearfix
+	- @guides.each do |guide|
+		.box.col1
+			%p
+				%h4= guide.title
