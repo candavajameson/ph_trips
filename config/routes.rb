@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'dashboard#index'
 
   resources :blogs
-  resources :guides
+  resources :guides, only: [:index, :show]
   resource :profile, only: [:show, :update] do
     scope module: :profiles do
       resource :password, only: [:edit, :update] do

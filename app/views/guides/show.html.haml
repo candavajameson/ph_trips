@@ -1,6 +1,8 @@
 %h1= @guide.title
 %hr
 
-%p= @guide.description
+.banner-container
+	%p= @guide.description
+	= image_tag (@guide.banner_url), class: 'banner' if @guide.banner?
 
 %p= @guide.user.email

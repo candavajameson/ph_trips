@@ -1,7 +1,7 @@
 module DashboardHelper
 	
-	def random_css_mansory
-		css = %w(col1 col2 col3)
-		css[rand(ss.size)]
+	def randomized_css_mansory
+		css = %w(col3 col4 col5)
+		css[rand(css.size)]
 	end
 end

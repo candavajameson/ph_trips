@@ -1,7 +1,9 @@
 %h1= @blog.title
-
 %hr
 
+.banner-container
+	= image_tag (@blog.banner_url), class: 'banner' if @blog.banner?
+	
 .row
 	= @blog.content.html_safe 
 
