@@ -9,6 +9,7 @@ class ProfilesController < ApplicationController
 	def update
 		if @user.update_attributes(user_params)
 			flash[:notice] = 'Profile was successfully updated'
+			redirect_to profile_path
 		else
 			render 'show'
 		end
@@ -16,7 +17,9 @@ class ProfilesController < ApplicationController
 
 	private 
 	def user_params
-		params.require(:user).permit(:name, :email)
+		params.require(:user).permit(:name, 
+									 :email,
+									 :avatar)
 	end
 
 	def set_user

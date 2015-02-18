@@ -23,6 +23,13 @@
 @import 'bootstrap';
 @import 'bootstrap/theme';
 
+@import "main/*";
+
+/**
+ * Generic css (forms, nav etc):
+ */
+@import "generic/*";
+
 .navbar {
 	background-color: #eeeeee !important;
 	background: none;
