@@ -1,0 +1,12 @@
+%h1 User List
+%hr
+
+.container
+	.users.row
+		- @users.each do |user|
+			.col-lg-4
+				= image_tag avatar_icon(user.email, 140), class: 'img-circle user-row'
+				%h4= user.name
+
+= paginate @users
+= page_entries_info @users

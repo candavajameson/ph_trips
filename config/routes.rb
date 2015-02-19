@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root 'dashboard#index'
 
+  resources :users, only: [:index]
   resources :blogs
   resources :guides, only: [:index, :show]
   resource :profile, only: [:show, :update] do
