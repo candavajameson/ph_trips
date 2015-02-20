@@ -5,8 +5,8 @@ class HotelController < ApplicationController
 		@hotels = Hotel.all
 
 		if params[:destination].present?
-			destination = Destination.where(name: params[:destination])
-			@hotels = @hotels.where(destination_id: destination.first.id)
+			destination = Destination.find_by(name: params[:destination])
+			@hotels = @hotels.where(destination_id: destination.id)
 		end
 
 		@hotels = @hotels.page(params[:page]).per(10)
