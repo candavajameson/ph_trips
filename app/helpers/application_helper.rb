@@ -25,4 +25,9 @@ module ApplicationHelper
 		image_path('no_avatar.png')
 	end
 
+	def forum_post_count(user_id)
+		@user = User.find(user_id)
+		@user.forum_posts.count
+	end
+
 end

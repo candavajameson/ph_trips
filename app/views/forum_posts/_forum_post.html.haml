@@ -1,2 +1,19 @@
-%p.text-muted= "Posted by #{forum_post.user.email}"
-%p= forum_post.body
+.post.bg2 
+	.postbody
+		%h3.first
+			%a= 'Test'
+		%p.author
+			= forum_post.created_at.strftime("%F")
+		.content
+			= forum_post.body
+	%dl.postprofile
+		%dt
+			= image_tag (avatar_icon(forum_post.user.email, 80)), class: 'forum-profile-pic'
+			%br
+			%a.username-coloured= forum_post.user.name
+		%dd
+			%strong Posts:
+			= forum_post_count(forum_post.user.id)
+		%dd
+			%strong Joined:
+			= forum_post.user.created_at.strftime("%F")
