@@ -1,6 +1,6 @@
 .container
 	%h1= @forum_thread.subject
-	%p.text-muted= "Created by #{@forum_thread.user.email}"
+	%p.text-muted= "Created by #{@forum_thread.user.name}"
 	= render @forum_thread.forum_posts
 
 	%hr

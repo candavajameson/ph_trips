@@ -2,7 +2,7 @@
 %hr
 
 .avatar-container.clearfix
-	= image_tag (@user.avatar_url), alt: '', class: 'avatar s160'
+	= image_tag (@user.avatar_url), alt: '', class: 'avatar s160 avatar-radius'
 
 = form_for @user, url: profile_path, method: :put, html: { multipart: true, class: 'form-horizontal' } do  |f|
 	= render 'shared/error_messages', :object => f.object

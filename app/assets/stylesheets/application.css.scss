@@ -32,9 +32,17 @@
 
 @import "sections/*";
 
+body {
+	padding-top: 52px;
+}
+
 .navbar {
 	background-color: #eeeeee !important;
 	background: none;
+	position: fixed;
+	width: 100%;
+	top:0;
+	left: 0;
 }
 
 .main-title {
