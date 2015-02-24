@@ -6,3 +6,5 @@
 			.meta 
 				%span.mitem 1 views
 				%span.mitem= "#{forum_thread.forum_posts.count} comments" 
+				%span.mitem= "Started by #{forum_thread.user.name}"
+				%span.mitem= forum_thread.created_at.strftime('%B %d')
