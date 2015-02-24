@@ -81,3 +81,67 @@
 		padding: 0 !important;
 	}
 }
+
+.discussion {
+	border-radius: 2px;
+	
+	ul {
+		margin-top: 0;
+		margin-bottom: 10px;
+		list-style: none;
+	}
+
+	.item {
+		margin: 0;
+		position: relative;
+		background: #FAFAFA;
+		border-right: 1px solid #ECECEC;
+		border-left: 6px solid #fff;
+		border-bottom: 1px dashed #E5E5E5;
+		padding: 20px;
+		padding-left: 18px;
+
+		.user-profile {
+			float: left;
+			position: relative;
+			line-height: 1;
+			
+			img {
+				border-radius: 50px;
+				height: 45px;
+				width: 45px;
+			}
+		}
+
+		a {
+			outline: none;
+			transition: all 0.4s; 
+		}
+
+		.title {
+			margin-left: 65px;
+			display: block;
+
+			a {
+				font-size: 14px;
+				color: #333333;
+				font-weight: 600;
+				font-family: 'Open Sans';
+			}
+		}
+
+		.meta {
+			margin-left: 55px;
+			font-size: 11px;
+			color: #70727c;
+			margin-top: 2px;
+			
+			.mitem {
+				font-size: 13px;
+				margin-left: 8px;
+				margin-right: 8px;
+				white-space: nowrap;
+			}
+		}
+	}
+}
