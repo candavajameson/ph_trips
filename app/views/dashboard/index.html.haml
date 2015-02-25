@@ -2,7 +2,7 @@
 %hr
 
 %h3= link_to 'Guides', guides_path
-#masonry-container.transitions-enabled.infinite-scroll.clearfix
+#masonry-container.masonry-box.transitions-enabled.infinite-scroll.clearfix
 	- @guides.each do |guide|
 		.box{ class: "#{randomized_css_mansory}"}
 			= image_tag (guide.banner_url), class: 'banner'
@@ -10,7 +10,7 @@
 			%p= guide.description
 
 %h3= link_to 'Latest Blogs', blogs_path
-#masonry-container.transitions-enabled.infinite-scroll.clearfix
+#masonry-container.masonry-box.transitions-enabled.infinite-scroll.clearfix
 	- @blogs.each do |blog|
 		.box{ class: "#{randomized_css_mansory}"}
 			= image_tag (blog.banner_url)
@@ -18,7 +18,7 @@
 			%p= blog.excerpt
 
 %h3= link_to 'Hotels', hotel_index_path
-#masonry-container.transitions-enabled.infinite-scroll.clearfix
+#masonry-container.masonry-box.transitions-enabled.infinite-scroll.clearfix
 	- @hotels.each do |hotel|
 		.box{ class: "#{randomized_css_mansory}"}
 			= image_tag (hotel.banner_url)
