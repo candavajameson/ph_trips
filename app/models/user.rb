@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
    has_many :forum_posts
    has_many :hotels
    has_many :guides
+   has_many :comments
 
    mount_uploader :avatar, AvatarUploader
 

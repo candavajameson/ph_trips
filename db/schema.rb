@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150220072204) do
+ActiveRecord::Schema.define(version: 20150225084842) do
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 20150220072204) do
 
   add_index "categories_guides", ["category_id"], name: "index_guide_categories_on_category_id", using: :btree
   add_index "categories_guides", ["guide_id", "category_id"], name: "index_guide_categories_on_guide_id_and_category_id", using: :btree
+
+  create_table "comments", force: true do |t|
+    t.text     "body"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "destinations", force: true do |t|
     t.string   "name"

@@ -5,15 +5,15 @@
 #masonry-container.masonry-box.transitions-enabled.infinite-scroll.clearfix
 	- @guides.each do |guide|
 		.box{ class: "#{randomized_css_mansory}"}
-			= image_tag (guide.banner_url), class: 'banner'
-			%h1= link_to guide.title, guides_path(guide)
+			= image_tag (guide.banner_url), class: 'banner' if guide.banner?
+			%h1= link_to guide.title, guide_path(guide)
 			%p= guide.description
 
 %h3= link_to 'Latest Blogs', blogs_path
 #masonry-container.masonry-box.transitions-enabled.infinite-scroll.clearfix
 	- @blogs.each do |blog|
 		.box{ class: "#{randomized_css_mansory}"}
-			= image_tag (blog.banner_url)
+			= image_tag (blog.banner_url) if blog.banner?
 			%h4= link_to blog.title, blog_path(blog)
 			%p= blog.excerpt
 
@@ -21,7 +21,7 @@
 #masonry-container.masonry-box.transitions-enabled.infinite-scroll.clearfix
 	- @hotels.each do |hotel|
 		.box{ class: "#{randomized_css_mansory}"}
-			= image_tag (hotel.banner_url)
+			= image_tag (hotel.banner_url) if hotel.banner?
 			%h4= link_to hotel.name, hotel_path(hotel)
 			%p= hotel.description
 
