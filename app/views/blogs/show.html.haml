@@ -7,3 +7,13 @@
 .row
 	= @blog.content.html_safe 
 
+- if @blog.comments.any?
+	%h1 Comments
+	%ul.discussion
+		- @blog.comments.each do |comment|
+			%li.item
+				= link_to image_tag(avatar_icon(comment.user.email, 45)), '#', class: "user-profile"
+				.item-content
+					.title= comment.user.name
+					.meta 
+						%p.mitem= comment.body

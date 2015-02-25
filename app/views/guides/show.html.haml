@@ -5,4 +5,13 @@
 	%p= @guide.description
 	= image_tag (@guide.banner_url), class: 'banner' if @guide.banner?
 
-%p= @guide.user.email
+- if @guide.comments.any?
+	%h1 Comments
+	%ul.discussion
+		- @guide.comments.each do |comment|
+			%li.item
+				= link_to image_tag(avatar_icon(comment.user.email, 45)), '#', class: "user-profile"
+				.item-content
+					.title= comment.user.name
+					.meta 
+						%p.mitem= comment.body

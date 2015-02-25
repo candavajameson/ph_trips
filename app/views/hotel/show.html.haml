@@ -1,4 +1,4 @@
-%h1= @hotel.name
+%h1.main-title= @hotel.name
 %hr
 
 - content_for :scripts do
@@ -6,10 +6,23 @@
 
 .banner-container
 	%p= @hotel.address
-	= image_tag (@hotel.banner_url), class: 'banner' if @hotel.banner?
+	/= image_tag (@hotel.banner_url), class: 'banner' if @hotel.banner?
 
 %h4 How to Get There
 %p= @hotel.access_summary
 
 .map_container
 	#map.gmaps4rails_map	
+
+
+
+- if @hotel.comments.any?
+	%h1 Comments
+	%ul.discussion
+		- @hotel.comments.each do |comment|
+			%li.item
+				= link_to image_tag(avatar_icon(comment.user.email, 45)), '#', class: "user-profile"
+				.item-content
+					.title= comment.user.name
+					.meta 
+						%p.mitem= comment.body
