@@ -2,6 +2,7 @@ class BlogsController < ApplicationController
 
 	before_filter :authenticate_user!, except: [:index, :show]
 	before_filter :set_blog, only: [:edit, :update, :show]
+	before_filter :set_commentable, only: [:show]
 
 	def index
 		@blogs = Blog.page(params[:page]).per(10)
@@ -48,6 +49,11 @@ class BlogsController < ApplicationController
 
 	def set_blog
 		@blog = Blog.find(params[:id])
+	end
+
+
+	def set_commentable
+		@commentable = Blog.find(params[:id])
 	end
 
 end

@@ -4,8 +4,15 @@ Rails.application.routes.draw do
   root 'dashboard#index'
 
   resources :users, only: [:index]
-  resources :blogs
-  resources :guides, only: [:index, :show]
+  
+  resources :blogs do
+    resources :comments, only: [:create]
+  end
+  
+  resources :guides, only: [:index, :show] do
+    resources :comments, only: [:create]
+  end
+
   resource :profile, only: [:show, :update] do
     scope module: :profiles do
       resource :password, only: [:edit, :update] do
@@ -16,7 +23,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :hotel, only: [:show, :index]
+  resources :hotel, only: [:show, :index] do
+    resources :comments, only: [:create]
+  end
 
   namespace :admin do
     resources :categories

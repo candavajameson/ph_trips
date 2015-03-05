@@ -1,5 +1,7 @@
 class HotelController < ApplicationController
 
+	before_filter :set_commentable, only: [:show]
+
 	def index
 		
 		@hotels = Hotel.all
@@ -23,5 +25,9 @@ class HotelController < ApplicationController
 		end
 	end
 
+	private
+	def set_commentable
+		@commentable = Hotel.find(params[:id])
+	end
 	
 end
