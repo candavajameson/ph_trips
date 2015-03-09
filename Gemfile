@@ -51,6 +51,10 @@ gem 'underscore-rails'
 #Google Maps
 gem 'gmaps4rails'
 
+#API
+gem 'grape'
+gem 'grape-swagger'
+
 group :development do 
 	gem 'better_errors'
 end
